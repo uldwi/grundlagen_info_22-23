@@ -1,40 +1,30 @@
-public class HalliGalli {
-    private int anzahl;
-    private String farbe;
-    private double breite = 5.5;
+public class HalliGalli extends Karte{
+    private int zahl;
     private static int anzKarten = 0;
 
     public static int getAnzKarten() {
         return anzKarten;
     }
 
-    public int getAnzahl() {
-        return anzahl;
+    public int getZahl() {
+        return zahl;
     }
 
-    public String getFarbe() {
-        return farbe;
-    }
-
-    public void setAnzahl(int anzahl) {
-        if(anzahl<=5) {
-            this.anzahl = anzahl;
+    public void setZahl(int zahl) {
+        if(zahl<=5) {
+            this.zahl = zahl;
         } else {
             System.out.println("nicht möglich");
         }
     }
 
-    public void spiel() {
-        System.out.println("Karte mit " + anzahl + " " + farbe + " gespielt");
+    public void spielen() {
+        System.out.println("HalliGalli Karte mit Farbe " + getFarbe() + " und zahl " + zahl + " gespielt");
     }
 
-    public void gebeAn(int spieler) {
-        System.out.println("An Spieler " + spieler + " gegeben.");
-    }
-
-    public HalliGalli(int anzahl, String farbe) {
-        setAnzahl(anzahl);
-        this.farbe = farbe;
-        anzKarten++;
+    public HalliGalli(int zahl, int breite, String farbe) {
+        super(breite, farbe);
+        setZahl(zahl);
+        anzKarten ++;
     }
 }
